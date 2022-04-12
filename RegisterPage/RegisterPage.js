@@ -68,7 +68,7 @@ export class RegisterPage extends Component {
                         <label htmlFor="floatingPassword">Confirm password</label>
                     </div>
                 </div>
-                <button type="sumbit" className="btn1 btn-success" onClick={this.validatePassword}> Register </button>
+                <button type="sumbit" className="btn btn-success" onClick={this.validatePassword}> Register </button>
                 <div className="register-link">Not registered? <a href="/" className="link-success">Click here</a> to login.</div>
             </div>
         );

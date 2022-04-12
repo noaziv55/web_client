@@ -34,6 +34,12 @@
   /* flex-grow: 1; */
 }
 
+.buttonHolder{
+  align-items: stretch;
+  border-radius: 7px;
+  width: 35%;
+}
+
 .btn {
   /* height: 7%;
   width: 20%; */
@@ -41,8 +47,7 @@
   top: 83%;
   left: 50%; */
   border-radius: 7px;
-  margin: 10px;
-  width: 35%;
+  width: 150px;
   font-size:large;
   text-shadow: 1px 1px 1px #000;
 }

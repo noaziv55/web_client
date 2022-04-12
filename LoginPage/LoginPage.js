@@ -16,8 +16,8 @@ export class LoginPage extends Component {
             return false;
         } else {
             alert("SignIn successfully")
+            window.location.href = "ChatPage"; }
             //todo: add user to map
-        }
     }
 
     render() {
@@ -33,7 +33,9 @@ export class LoginPage extends Component {
                         <label htmlFor="floatingPassword">Password</label>
                     </div>
                 </div>
+        
                 <button type="submit" className="btn btn-success" onClick={this.validatefields}> Login </button>
+            
                 <div className="register-link">Not registered? <a href="RegisterPage" className="link-success">Click here</a> to register.</div>
             </div>
         );
