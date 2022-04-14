@@ -1,3 +1,11 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-repeat: repeat; */
+}
+
 .very-cool-margin {
   margin-bottom: 10px;
 }
@@ -55,14 +63,14 @@
   /* flex-grow: 1; */
 }
 
-.btn1 {
+.btn {
   /* height: 7%;
     width: 20%; */
   /* position: absolute;
     top: 83%;
     left: 50%; */
   border-radius: 7px;
-  width: 35%;
+  width:150px;
   font-size: large;
   margin-bottom: 10px;
   text-shadow: 1px 1px 1px #000;
