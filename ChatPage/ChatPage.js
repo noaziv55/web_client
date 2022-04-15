@@ -7,7 +7,7 @@ import React from 'react';
 export class ChatPage extends Component {
     render() {
         return (
-            <div className="chat-container">
+            <div className="chat-container mx-auto" >
                 <div className="chat-block">
                     <div className="sidebar">
                         <div className="header">

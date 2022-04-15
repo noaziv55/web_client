@@ -16,9 +16,10 @@ export function validateUser (username, password){
 }
 
 
-export function isValidImageURL (str) {
+/* export function isValidImageURL (str) {
     if (typeof str !== 'string'){
         return false;
     } 
     return (str.match(/\.(jpeg|jpg|gif|png)$/) != null);
 }
+ */
