@@ -1,24 +1,219 @@
 import './ChatPage.css';
+import Avatar1 from './Avatar5.jpeg'
+import Avatar2 from './Avatar2.jpeg'
+import { useState } from 'react';
 import { Component } from 'react';
 import React from 'react';
 
-export class ChatPage extends Component {
-    render() {
-        return (
 
-            <div className="container">
-                <div className="row gx-12">
-                    <div className="col">
-                        Column
+
+export function ChatPage() {
+    let [AddImg, addImg] = useState("");
+    function imageHandler(e) {
+        addImg(URL.createObjectURL(e.target.files[0]))
+
+    };
+
+    let [AddVideo, addVideo] = useState("");
+    function videoHandler(e) {
+        addVideo(URL.createObjectURL(e.target.files[0]))
+
+    };
+
+
+
+    return (
+        <div className="chat-container">
+            <div className="chat-block">
+                <div className="sidebar">
+                    <div className="header">
+                        <div className="avatar">
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt=""></img>
+                        </div>
+                        <div className="chat-header-right">
+                            <a href="#myModal" role="button" class="button" data-bs-toggle="modal">
+                                <i className="bi bi-chat-left-text-fill"></i>
+                            </a>
+                            <div id="myModal" className="modal fade" tabIndex="-1">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title">Add new contact</h5>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            <div className="form-floating very-cool-margin">
+                                                <input type="username" className="form-control" id="Username" placeholder="text" required></input>
+                                                <label htmlFor="floatingInput">Username</label>
+                                            </div>
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-primary">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col">
-                        Column
+                    <div className="sidebar-chats">
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noa Ziv</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noam Gini</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noa Ziv</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noa Ziv</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noa Ziv</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noa Ziv</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noa Ziv</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noa Ziv</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                        <div className="sidebar-chat">
+                            <div className="avatar">
+                                <img src={Avatar1} alt=""></img>
+                            </div>
+                            <div className="chat-info">
+                                <h4>Noa Ziv</h4>
+                                <p>Last Massage</p>
+                            </div>
+                            <div className="time">
+                                <p>2:44 pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="message-container">
+                    <div className="header">
+                        <div className="chat-title">
+                            <div className="avatar">
+                                <img src={Avatar2} alt="" />
+                            </div>
+                            <div className="massage-header-content">
+                                <h4>Noam Gini</h4>
+                                <p>online</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="message-content">
+                        <p className="chat-message chat-sent">This is a message <span className="chat-timestamp">11:33 pm</span></p>
+                        <p className="chat-message">This is a message <span className="chat-timestamp">11:33 pm</span></p>
+                        <p className="chat-message chat-sent">This is a message <span className="chat-timestamp">11:33 pm</span></p>
+                        <p className="chat-message">This is a message <span className="chat-timestamp">11:33 pm</span></p>
+                        <p className="chat-message chat-sent">This is a message <span className="chat-timestamp">11:33 pm</span></p>
+                        <p className="chat-message">This is a message <span className="chat-timestamp">11:33 pm</span></p>
+                        <p className="chat-message chat-sent">This is a message <span className="chat-timestamp">11:33 pm</span></p>
+                        <p className="chat-message">This is a message <span className="chat-timestamp">11:33 pm</span></p>
+                    </div>
+                    <div className="message-footer">
+
+                        <input type="file" accept="image/*" name="image-upload" id="input" onChange={imageHandler} ></input>
+                        <label className="image-upload" htmlFor="input" >
+                            <i className="bi bi-image" htmlFor="input"></i>
+                        </label>
+                        <div className="addingVideotest">
+                            <div className="addingVideo">
+                                <input type="file" accept="video/mp4,video/x-m4v,video/*" name="video-upload" id="videoFile" onChange={videoHandler} ></input>
+                            </div>
+                            <label className="video-upload" htmlFor="videoFile" >
+                                <i className="bi bi-camera-video" htmlFor="videoFile"></i>
+                            </label>
+                        </div>
+                        <i className="bi bi-paperclip"></i>
+                        <input type="text" placeholder="Type a message"></input>
+
+
+                        <i className="bi bi-mic"></i>
                     </div>
                 </div>
             </div>
-        );
-    }
-
+        </div >
+    );
 }
 
+
 export default ChatPage;
+
