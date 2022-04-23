@@ -7,21 +7,10 @@ import { Link } from 'react-router-dom';
 
 /* export class RegisterPage extends Component { */
 export function RegisterPage(params) {
-    /*     constructor(props) {
-            super(props);
-            this.state = {profileImg : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'};
-          } */
+   
 
     let [profileImg, setProfileImg] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png')
     function imageHandler (e) {
-        /*         const reader = new FileReader()
-                reader.onload = () => {
-                    if (reader.readyState === 2) {
-                        this.setState({ profileImg: reader.result })
-                    }
-                }
-                reader.readAsDataURL(e.target.files[0]) */
-        /*this.setState({profileImg:URL.createObjectURL(e.target.files[0])})*/
         setProfileImg(URL.createObjectURL(e.target.files[0]))
 
     };
@@ -32,7 +21,6 @@ export function RegisterPage(params) {
         var nickname = document.getElementById("Nickname").value;
         var password = document.getElementById("Password1").value;
         var confirm_password = document.getElementById("Password2").value;
-        /* var image = document.querySelector('input[type=file]').files[0]; */
 
         if (profileImg ==='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' ) {
             alert("please add an image");
@@ -64,7 +52,6 @@ export function RegisterPage(params) {
                 }
             }
             addUserToData(username, nickname, password, profileImg);
-            /* console.log(userDataBase.get(username).image); */
             alert("You have successfully registered! go back to login page");
         }
         return;

@@ -4,7 +4,7 @@ import { validateUser, userDataBase } from '../DataBase/DataBase';
 import { Link, useNavigate } from 'react-router-dom';
 
 /*export class LoginPage extends Component */
-export function LoginPage(params) {
+export function LoginPage() {
 
     let navigate = useNavigate()
 
@@ -22,7 +22,7 @@ export function LoginPage(params) {
             if (userDataBase.has(username)) {
                 if (validateUser(username, password)) {
                     alert("SignIn successfully");
-                    navigate("ChatPage");
+                    navigate("ChatPage",{state:userDataBase.get(username)});
                     return;
                 }
 
