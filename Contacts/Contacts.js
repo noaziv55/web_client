@@ -2,9 +2,9 @@
 import MessageContainer from '../MessageContainer/MessageContainer';
 function Contacts(props) {
 
-    function openChatWindow() {
-        console.log(props.nickname);
-        <MessageContainer props={props} />
+    function openChatWindow() {  
+       // console.log(props.username);
+        props.setCurrentWindow(props.username);
     }
 
     return (

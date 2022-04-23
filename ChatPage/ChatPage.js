@@ -11,7 +11,7 @@ export function ChatPage() {
 
     const location = useLocation();
 
-    const [currentWindow,setCurrentWindow]=useState("https://i.imgur.com/C7cZeFA.png");
+    const [currentWindow,setCurrentWindow]=useState(null);
 
 
     const [contactsList, setContactsList] = useState([]);
@@ -95,9 +95,8 @@ export function ChatPage() {
                         {contactsList.map((contact, key) => <Contacts
                             nickname={getUserNickname(contact.username)}
                             image={getUserImage(contact.username)}
-                            currentWindow={currentWindow}
                             setCurrentWindow={setCurrentWindow}
-                            number={key}
+                            username={contact.username}
                             key={key} />
                         )}
                     </div>

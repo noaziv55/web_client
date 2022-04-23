@@ -104,19 +104,6 @@
 
 }
 
-.sidebar-chat:nth-child(2) {
-    background-color: #ebebeb;
-}
-
-/* .sidebar-chat::before {
-    content: '';
-    position: absolute;
-    width: 80%;
-    bottom: 0;
-    left: 80px;
-    border-bottom: 1px solid #999;
-    opacity: 0.2;
-} */
 
 .chat-info {
     margin-left: 15px;
