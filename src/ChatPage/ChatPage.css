@@ -44,6 +44,7 @@
 }
 
 .chat-header-right i {
+    display: inline;
     font-size: 1.2rem;
     height: 100;
     width: 100;
@@ -103,20 +104,6 @@
 
 }
 
-.sidebar-chat:nth-child(2) {
-    background-color: #ebebeb;
-}
-
-/* .sidebar-chat::before {
-    content: '';
-    position: absolute;
-    width: 80%;
-    bottom: 0;
-    left: 80px;
-    border-bottom: 1px solid #999;
-    opacity: 0.2;
-
-} */
 
 .chat-info {
     margin-left: 15px;
@@ -257,13 +244,27 @@ p {
     align-self: flex-end;
     width: 100%;
     padding: 10px 10px;
-    background-color: white;
+    background-color:#ebebeb;
 
 }
 
 .message-footer i {
-    opacity: 0.4;
+    opacity: 0.6;
+    font-size: 1.2rem;
+    padding: 5px;
 }
+
+.sender{
+    border: none;
+    background-color: white;
+}
+
+.sender:active{
+    background-color:#ebebeb;
+    border-radius: 25px;
+}
+
+
 
 .message-footer input {
     flex-grow: 20;
@@ -273,3 +274,78 @@ p {
     border-radius: 20px;
     font-size: 16px;
 }
+
+.addingVideo{
+    display: none;
+    
+
+}
+/* Dropup Button */
+.dropbtn {
+    color: white;
+    background-color: white;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropup content */
+  .btn-group {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropup content (Hidden by Default) */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+   
+  }
+  
+  .imgWarp{
+      align-content: center;    
+      background-color: white;
+      align-items: stretch;
+      border: none;
+  }
+
+  .videoWarp{
+    background-color: white;
+    border: none;
+  }
+  .videoWarp:hover{
+    background-color:#ebebeb;
+    border-radius: 25px;
+    padding:2px;
+  }
+
+  .imgWarp:hover{
+    background-color:#ebebeb;
+    border-radius: 25px;
+    padding:2px;
+  }
+  /* Show the dropup menu on hover */
+  .btn-group:hover .dropdown-menu {
+    display:block;
+    
+
+  }
+  
+  /* Change the background color of the dropup button when the dropup content is shown */
+  .btn-group:hover .dropbtn {
+    background-color:#b9b3ae;
+  }
+
+
+
+/*
+ <p>
+     <button type="button" onClick={recordFunc} id="record">Record</button>
+        <button type="button" id="stopRecord" disabled>Stop</button>
+</p>
+<p>
+    <audio id="recordedAudio"></audio></p>*/

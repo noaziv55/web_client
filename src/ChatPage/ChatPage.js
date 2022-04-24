@@ -1,165 +1,102 @@
 import './ChatPage.css';
-import Avatar1 from './Avatar5.jpeg'
-import Avatar2 from './Avatar2.jpeg'
-import { Component } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import React from 'react';
+import Contacts from '../Contacts/Contacts';
+import { addChat, contactsDataBase, getUserImage, getUserNickname, userDataBase, addToContactsDataBase } from '../DataBase/DataBase';
+import { useLocation } from 'react-router-dom';
+import MessageContainer from '../MessageContainer/MessageContainer';
 
-export class ChatPage extends Component {
-    render() {
-        return (
-            <div className="chat-container">
-                <div className="chat-block">
-                    <div className="sidebar">
-                        <div className="header">
-                            <div className="avatar">
-                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt=""></img>
-                            </div>
-                            <div className="chat-header-right">
-                                <i className="bi bi-chat-left-text-fill"></i>
-                            </div>
+
+export function ChatPage() {
+
+    const location = useLocation();
+
+    const [currentWindow, setCurrentWindow] = useState(null);
+    const [contactsList, setContactsList] = useState([]);
+
+    useEffect(() => {
+        if (contactsList.length === 0) {
+            if (contactsDataBase.has(location.state.username)) {
+                if (userDataBase.get(location.state.username).password === location.state.password) {
+
+                    setContactsList(contactsDataBase.get(location.state.username).chats);
+                }
+            }
+            else {
+                addToContactsDataBase(location.state.username);
+            }
+        }
+    }, []);
+
+    const closeButton = useRef();
+    function AddContact() {
+        var username = document.getElementById("Username").value;
+        if (userDataBase.has(username)) {
+            let currentList = addChat(username, contactsDataBase.get(location.state.username).chats);
+            document.getElementById("Username").value = "";
+            closeButton.current.click();
+            setContactsList([...currentList]);
+        }
+        else {
+            alert("contact not found");
+        }
+    }
+
+
+    return (
+        <div className="chat-container">
+            <div className="chat-block">
+                <div className="sidebar">
+                    <div className="header">
+                        <div className="avatar">
+                            <img src={location.state.image} alt=""></img>
                         </div>
-                        <div className="sidebar-chats">
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noa Ziv</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
-                                </div>
-                            </div>
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noam Gini</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
-                                </div>
-                            </div>
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noa Ziv</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
-                                </div>
-                            </div>
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noa Ziv</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
-                                </div>
-                            </div>
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noa Ziv</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
-                                </div>
-                            </div>
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noa Ziv</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
-                                </div>
-                            </div>
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noa Ziv</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
-                                </div>
-                            </div>
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noa Ziv</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
-                                </div>
-                            </div>
-                            <div className="sidebar-chat">
-                                <div className="avatar">
-                                    <img src={Avatar1} alt=""></img>
-                                </div>
-                                <div className="chat-info">
-                                    <h4>Noa Ziv</h4>
-                                    <p>Last Massage</p>
-                                </div>
-                                <div className="time">
-                                    <p>2:44 pm</p>
+                        <div className="massage-header-content">
+                            <h4>{location.state.nickname}</h4>
+                        </div>
+                        <div className="chat-header-right">
+                            <a href="#myModal" role="button" className="button" data-bs-toggle="modal">
+                                <i className="bi bi-chat-left-text-fill"></i>
+                            </a>
+                            <div id="myModal" className="modal fade" tabIndex="-1">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title">Add new contact</h5>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" ref={closeButton}></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            <div className="form-floating very-cool-margin">
+                                                <input type="username" className="form-control" id="Username" placeholder="text" required></input>
+                                                <label htmlFor="floatingInput">Username</label>
+                                            </div>
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-primary" onClick={AddContact}>Add</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="message-container">
-                        <div className="header">
-                            <div className="chat-title">
-                                <div className="avatar">
-                                    <img src={Avatar2} alt="" />
-                                </div>
-                                <div className="massage-header-content">
-                                    <h4>Noam Gini</h4>
-                                    <p>online</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="message-content">
-                            <p className="chat-message chat-sent">This is a message <span className="chat-timestamp">11:33 pm</span></p>
-                            <p className="chat-message">This is a message <span className="chat-timestamp">11:33 pm</span></p>
-                            <p className="chat-message chat-sent">This is a message <span className="chat-timestamp">11:33 pm</span></p>
-                            <p className="chat-message">This is a message <span className="chat-timestamp">11:33 pm</span></p>
-                            <p className="chat-message chat-sent">This is a message <span className="chat-timestamp">11:33 pm</span></p>
-                            <p className="chat-message">This is a message <span className="chat-timestamp">11:33 pm</span></p>
-                            <p className="chat-message chat-sent">This is a message <span className="chat-timestamp">11:33 pm</span></p>
-                            <p className="chat-message">This is a message <span className="chat-timestamp">11:33 pm</span></p>
-                        </div>
-                        <div className="message-footer">
-                            <input type="text" placeholder="Type a message"></input>
-                            <i class="bi bi-mic"></i>
-                        </div>
+                    <div className="sidebar-chats">
+                        {contactsList.map((contact, key) => <Contacts
+                            nickname={getUserNickname(contact.username)}
+                            image={getUserImage(contact.username)}
+                            setCurrentWindow={setCurrentWindow}
+                            contactUsername={contact.username}
+                            contactsList={contactsList}
+                            setContactsList={setContactsList}
+                            messages={contact.messages}
+                            loggedInUser={location.state.username}
+                            key={key} />
+                        )}
                     </div>
                 </div>
+                <MessageContainer currentWindow={currentWindow} contactsList={contactsList} />
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default ChatPage;
