@@ -1,4 +1,5 @@
 import './LoginPage.css';
+import LoginLogo from './LoginPageImage.png'
 import React from 'react';
 import { validateUser, userDataBase } from '../DataBase/DataBase';
 import { Link, useNavigate } from 'react-router-dom';
@@ -34,6 +35,7 @@ export function LoginPage() {
 
     return (
         <div className="container">
+            <img src={LoginLogo} className="logo-img"></img>
             <div className="outterBlock">
                 <div className="block">
                     <div className="form-floating very-cool-margin">

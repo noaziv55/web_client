@@ -1,5 +1,5 @@
 //import { currentWindow, setCurrentWindow } from '..ChatPage/ChatPage'
-
+import openningWindow from './ChatPageImage.png'
 import { getUserImage, getUserNickname } from "../DataBase/DataBase";
 import MessageContent from "../MessageContent/MessageContent";
 import MessageFooter from "../MessageFooter/MessageFooter";
@@ -7,14 +7,7 @@ import MessageFooter from "../MessageFooter/MessageFooter";
 function MessageContainer(props) {
 
     if (props.currentWindow === null) {
-      return <img className="message-container" src="https://i.imgur.com/C7cZeFA.png" alt=""></img>
-     /*
-      return( <div className="message-container">
-      <img src="https://i.imgur.com/C7cZeFA.png" alt="" className="cover"></img>
-      </div>
-      );
-      */
-
+        return <img className="message-container" src={openningWindow} alt=""></img>
     }
 
     return (
