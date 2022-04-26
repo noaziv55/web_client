@@ -25,7 +25,7 @@ The web site allows the client to send various messages such as: text, audio, im
 ### Openning chat page:
 ![chat-opening-window](https://user-images.githubusercontent.com/92301625/165341627-35f3643e-7bd9-4b30-b9c1-007b3e979ced.png)
 ***
-### Specific chat conversion
+### Specific chat conversion:
 ![new-chat-window](https://user-images.githubusercontent.com/92301625/165341975-e37cbc7b-2a59-45ac-b399-a9271f382380.png)
 
 
