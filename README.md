@@ -1,9 +1,9 @@
 # ChatApp
 ## Table of Contents
 1. Introduction
-2. Demonstration images
+2. Demonstration Images
 3. Dependencies
-4. Setup
+4. Setup and User Guide
 5. Contributors
 
 ***
@@ -15,7 +15,7 @@ The web site allows the client to send various messages such as: text, audio, im
 
 ***
 
-# 2. Demonstration images
+# 2. Demonstration Images
 ### Login page:
 ![login-page](https://user-images.githubusercontent.com/92301625/165341350-55618ff3-bc4f-435a-a67b-8cb9cb27693c.png)
 ***
@@ -40,7 +40,8 @@ This site uses:
 
 ***
 
-# 4. Setup
+# 4. Setup and User Guide
+## 4.1 Setup
 
 * Clone the repo: 
   ```bash
@@ -55,6 +56,16 @@ This site uses:
   npm start
   ```
 * Open `http://localhost:3000/` with a browser
+
+## 4.2 User Guide
+
+* To enter with a hard coded admin fill in the fileds in the login page by using:
+  * `Username: Admin`
+  * `Password: 12345678`
+* To enter with a new user please click on the registration link below the fields.
+* After you register:
+  *  Click on the login link below.
+  *  Fill again the required fileds to log in.
 
 ***
 
