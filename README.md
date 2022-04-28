@@ -43,6 +43,7 @@ This site uses:
 # 4. Setup and User Guide
 ## 4.1 Setup
 
+* Download Node.js : `https://nodejs.org/en/` which includes NPM package manager for Node.js.
 * Clone the repo: 
   ```bash
   git clone https://github.com/noaziv55/web_client.git
