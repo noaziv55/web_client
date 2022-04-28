@@ -59,6 +59,7 @@ This site uses:
 
 ## 4.2 User Guide
 
+### How to enter the chat:
 * To enter with a hard coded admin fill in the fileds in the login page by using:
   * `Username: Admin`
   * `Password: 12345678`
@@ -66,6 +67,15 @@ This site uses:
 * After you register:
   *  Click on the login link below.
   *  Fill again the required fileds to log in.
+
+### How to use the chat:
+* To add new chat:
+  * Click on the message icon on the top left of the side bar chat.
+  * Enter one of the following names: Noam, Noa, Mor, Shai, Dani - Those are the names of the hard coded users.
+* Sending messages:
+  * Text: click on the "type a message" bar, write your text and press enter.
+  * Audio - Click on the microphone icon to start recording and click it again to send the audio record.
+  * Image/Video - Hover on the clip paper icon and click on the image icon to send an image or click on the video icon to send a video.
 
 ***
 
